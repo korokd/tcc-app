@@ -1,12 +1,11 @@
 import Vue from "vue";
 
+import "./registerServiceWorker";
 import "./plugins/vuetify";
 import store from "./store";
 import router from "./router";
 
 import App from "./App.vue";
-
-import "./registerServiceWorker";
 
 Vue.config.productionTip = false;
 
