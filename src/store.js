@@ -9,7 +9,7 @@ const CREATE_USER_URL = `${LOGIN_URL}/create`;
 
 const INITIAL_STATE = {
   cookie: "",
-  isUserLoggedIn: false,
+  isUserLoggedIn: true,
   user: null
 };
 

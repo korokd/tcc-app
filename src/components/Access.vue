@@ -4,9 +4,20 @@
     <v-container>
       <v-form ref="form" v-model="valid">
         <v-text-field v-model="email" :rules="rules.email" label="Email" required autofocus></v-text-field>
-        <v-text-field v-model="firstName" :rules="nameRules('Primeiro nome')" label="Primeiro nome" required v-if="!isRegistered"></v-text-field>
-        <v-text-field v-model="lastName" :rules="nameRules('Último nome')" label="Último nome" required v-if="!isRegistered"></v-text-field>
-        <v-text-field v-model="password" :rules="rules.password" label="Senha" required type="password"></v-text-field>
+        <v-text-field
+          v-model="fullName"
+          :rules="rules.name"
+          label="Nome completo"
+          required
+          v-if="!isRegistered"
+        ></v-text-field>
+        <v-text-field
+          v-model="password"
+          :rules="rules.password"
+          label="Senha"
+          required
+          type="password"
+        ></v-text-field>
       </v-form>
     </v-container>
     <v-card-actions>
@@ -40,14 +51,14 @@ export default {
     isRegistered: true,
     valid: false,
     email: "",
-    firstName: "",
-    lastName: "",
+    fullName: "",
     password: "",
     rules: {
       email: [
         v => !!v || "Email é obrigatório",
         v => /.+@.+/.test(v) || "Email precisa ser válido"
       ],
+      name: [v => !!v || `Seu nome é obrigatório(a)`],
       password: [
         v => !!v || "Senha é obrigatório",
         v => v.length >= 6 || "Email precisa ser válido"
@@ -55,12 +66,6 @@ export default {
     }
   }),
   methods: {
-    nameRules(field) {
-      if (this.isRegistered) {
-        return [];
-      }
-      return [v => !!v || `${field} é obrigatório(a)`];
-    },
     send() {
       let payload = { email: this.email, password: this.password };
 
@@ -72,10 +77,11 @@ export default {
       if (this.$refs.form.validate()) {
         const action = this.isRegistered ? "logUserIn" : "createUser";
         this.$store.dispatch(action, payload);
-        this.$emit("closeDialog");
+        this.$emit("close-dialog");
       }
     }
-  }
+  },
+  name: "Access"
 };
 </script>
 <style lang="scss" scoped>

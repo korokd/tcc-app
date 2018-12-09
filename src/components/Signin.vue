@@ -2,7 +2,7 @@
   <v-btn @click="logUserOut" v-if="isUserLoggedIn">Sair</v-btn>
   <v-dialog v-model="dialog" width="500" v-else>
     <v-btn slot="activator" color="white">Entrar</v-btn>
-    <Access @closeDialog="closeDialog"/>
+    <Access @close-dialog="closeDialog"/>
   </v-dialog>
 </template>
 <script>

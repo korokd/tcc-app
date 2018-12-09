@@ -8,7 +8,8 @@ Vue.use(Vuetify, {
   iconfont: "md",
   theme: {
     primary: colors.shades.black,
-    secondary: colors.grey.darken4
+    secondary: colors.grey.darken3,
+    tertiary: colors.shades.white
     // ,error: colors.red.darken4,
     // info: colors.lightBlue.darken1,
     // success: colors.green.lighten1,
