@@ -8,21 +8,44 @@
         :key="`${post.title}/${post.description}`"
       ></feed-detail>
     </v-list>
+    <v-btn fixed dark fab bottom right color="primary" class="action-button">
+      <v-dialog v-model="dialog">
+        <v-icon slot="activator">add</v-icon>
+        <publish-post @close-dialog="closeDialog"></publish-post>
+      </v-dialog>
+    </v-btn>
   </v-container>
 </template>
 <script>
 import FeedDetail from "@/components/FeedDetail";
+import PublishPost from "@/components/PublishPost";
+import { getPosts } from "@/service";
 
-import { feedItems } from "@/Fakes";
+const updatePosts = instance =>
+  getPosts().then(
+    r =>
+      (instance.feedItems = r.filter(
+        p => p.user.id === instance.$store.state.user.id
+      ))
+  );
 
 export default {
   components: {
-    FeedDetail
+    FeedDetail,
+    PublishPost
+  },
+  created() {
+    updatePosts(this);
   },
   data: () => ({
-    feedItems
+    dialog: false,
+    feedItems: []
   }),
   methods: {
+    closeDialog() {
+      this.dialog = false;
+      updatePosts(this);
+    },
     formatUserRef({ user }) {
       return `${user.fullName} <${user.type}>`;
     }
@@ -31,4 +54,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.action-button {
+  bottom: 64px;
+}
 </style>

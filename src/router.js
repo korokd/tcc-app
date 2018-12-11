@@ -19,8 +19,8 @@ export default new Router({
       name: "search"
     },
     {
-      path: "/messages",
-      name: "messages"
+      path: "/profile",
+      name: "profile"
     }
   ]
 });

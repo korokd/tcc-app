@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "archives": [],
+      "description": "Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla",
+      "title": "Xesquedele",
+      "user": 1
+    },
+    {
+      "title": "DesqueDolly",
+      "description": "Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla",
+      "user": 1,
+      "id": 3
+    },
+    {
+      "title": "DollyXesque",
+      "description": "Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla",
+      "user": 1,
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "korokdiogo@gmail.com",
+      "fullName": "Diogo Korok",
+      "skills": {
+        "Lute": 1
+      },
+      "specialties": [],
+      "structure": [],
+      "type": "Artist",
+      "ecossystem": [],
+      "password": "10141527"
+    }
+  ],
+  "uploads": [],
+  "connections": []
+}

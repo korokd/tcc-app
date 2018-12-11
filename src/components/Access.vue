@@ -67,11 +67,13 @@ export default {
   }),
   methods: {
     send() {
-      let payload = { email: this.email, password: this.password };
+      let payload = {
+        email: this.email,
+        password: this.password
+      };
 
       if (!this.isRegistered) {
-        payload.firstName = this.firstName;
-        payload.lastName = this.lastName;
+        payload.fullName = this.fullName;
       }
 
       if (this.$refs.form.validate()) {
