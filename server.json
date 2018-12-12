@@ -27,8 +27,20 @@
       "fullName": "Diogo Korok",
       "skills": [
         {
+          "name": "Aquarela",
+          "proficiency": 68
+        },
+        {
+          "name": "Cavaco",
+          "proficiency": 66
+        },
+        {
           "name": "Flauta",
           "proficiency": 16
+        },
+        {
+          "name": "Flauta doce",
+          "proficiency": 46
         },
         {
           "name": "Viola",
@@ -37,10 +49,6 @@
         {
           "name": "Violino",
           "proficiency": 41
-        },
-        {
-          "name": "Flauta doce",
-          "proficiency": 46
         }
       ],
       "specialties": [],

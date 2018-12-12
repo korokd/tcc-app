@@ -17,11 +17,25 @@
     <v-form ref="skills" v-model="valid.skills" @blur="onSkillBlur">
       <div v-for="skill in user.skills" :key="`${skill.name}/${skill.proficiency}`">
         <v-text-field v-model="skill.name" :rules="rules.skill" placeholder="Habilidade" required></v-text-field>
-        <v-slider v-model="skill.proficiency"></v-slider>
+        <v-layout>
+          <v-flex>
+            <v-slider v-model="skill.proficiency"></v-slider>
+          </v-flex>
+          <v-flex class="thin">
+            <v-text-field v-model="skill.proficiency" single-line type="number"></v-text-field>
+          </v-flex>
+        </v-layout>
       </div>
       <div>
         <v-text-field v-model="newSkill.name" :placeholder="placeholderText"></v-text-field>
-        <v-slider v-model="newSkill.proficiency"></v-slider>
+        <v-layout>
+          <v-flex>
+            <v-slider v-model="newSkill.proficiency"></v-slider>
+          </v-flex>
+          <v-flex class="thin">
+            <v-text-field v-model="newSkill.proficiency" single-line type="number"></v-text-field>
+          </v-flex>
+        </v-layout>
         <div class="flex row">
           <v-spacer></v-spacer>
           <v-btn @click="onSkillBlur" flat>
@@ -83,7 +97,7 @@ export default {
           this.$store.dispatch("updateUser", this.user);
         }
       } catch (e) {
-        console.error(e);
+        // console.error(e);
       }
     },
     onSkillBlur() {
@@ -93,14 +107,20 @@ export default {
           if (
             this.newSkill &&
             this.newSkill.name &&
-            this.newSkill.proficiency
+            (this.newSkill.proficiency || this.newSkill.proficiency === 0)
           ) {
+            this.newSkill.proficiency =
+              this.newSkill.proficiency > 100
+                ? 100
+                : this.newSkill.proficiency < 0
+                  ? 0
+                  : this.newSkill.proficiency;
             _u.skills.unshift(this.newSkill);
           }
           this.$store.dispatch("updateUser", _u);
         }
       } catch (e) {
-        console.error(e);
+        // console.error(e);
       }
     }
   },
@@ -108,14 +128,18 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.white {
-  color: white;
-}
 .flex {
   display: flex;
 
   &.row {
     flex-direction: row;
   }
+}
+.thin {
+  padding-left: 16px;
+  max-width: 64px;
+}
+.white {
+  color: white;
 }
 </style>

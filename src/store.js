@@ -16,8 +16,8 @@ export default new Vuex.Store({
   plugins: [createPersistedState()],
   mutations: {
     logUserIn(state, payload) {
-      payload.skills = payload.skills.sort((v1, v2) =>
-        v1.name > v2.name ? 1 : v2.name > v1.name ? -1 : 0
+      payload.skills = payload.skills.sort(
+        (v1, v2) => (v1.name > v2.name ? 1 : v2.name > v1.name ? -1 : 0)
       );
       state.isUserLoggedIn = true;
       state.user = payload;
@@ -28,8 +28,8 @@ export default new Vuex.Store({
       state.user = INITIAL_STATE.user;
     },
     updateUser(state, payload) {
-      payload.skills = payload.skills.sort((v1, v2) =>
-        v1.name > v2.name ? 1 : v2.name > v1.name ? -1 : 0
+      payload.skills = payload.skills.sort(
+        (v1, v2) => (v1.name > v2.name ? 1 : v2.name > v1.name ? -1 : 0)
       );
       state.user = payload;
       location.reload();

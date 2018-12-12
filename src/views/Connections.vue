@@ -39,8 +39,8 @@ const updateUserList = (instance, query) => {
     ([users, connections]) => {
       const userIds = [
         ...new Set(
-          connections.map(c =>
-            c.user1 === instance.$store.state.user.id ? c.user2 : c.user1
+          connections.map(
+            c => (c.user1 === instance.$store.state.user.id ? c.user2 : c.user1)
           )
         )
       ];
