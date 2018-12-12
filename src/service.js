@@ -11,6 +11,15 @@ export const createUser = payload =>
     body: JSON.stringify(payload)
   }).then(r => r.json());
 
+export const updateUser = payload =>
+  fetch(`${USERS_URL}/${payload.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  }).then(r => r.json());
+
 export const getUsers = () => fetch(USERS_URL).then(r => r.json());
 
 export const getPosts = () =>

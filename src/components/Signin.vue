@@ -23,6 +23,7 @@ export default {
   methods: {
     logUserOut() {
       this.$store.dispatch("logUserOut");
+      this.$router.push("home");
     },
     closeDialog() {
       this.dialog = false;

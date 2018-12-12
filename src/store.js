@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import { createUser, getUsers } from "@/service";
+import { createUser, updateUser, getUsers } from "@/service";
 
 Vue.use(Vuex);
 
@@ -21,11 +21,18 @@ export default new Vuex.Store({
     logUserOut(state) {
       state.isUserLoggedIn = INITIAL_STATE.isUserLoggedIn;
       state.user = INITIAL_STATE.user;
+    },
+    updateUser(state, payload) {
+      state.user = payload;
+      location.reload();
     }
   },
   actions: {
     createUser({ commit }, payload) {
       createUser(payload).then(r => commit("logUserIn", r));
+    },
+    updateUser({ commit }, payload) {
+      updateUser(payload).then(r => commit("updateUser", r));
     },
     logUserIn({ commit }, { email, password }) {
       getUsers().then(r => {

@@ -25,9 +25,24 @@
       "id": 1,
       "email": "korokdiogo@gmail.com",
       "fullName": "Diogo Korok",
-      "skills": {
-        "Lute": 1
-      },
+      "skills": [
+        {
+          "name": "Flauta",
+          "proficiency": 16
+        },
+        {
+          "name": "Viola",
+          "proficiency": 36
+        },
+        {
+          "name": "Violino",
+          "proficiency": 41
+        },
+        {
+          "name": "Flauta doce",
+          "proficiency": 46
+        }
+      ],
       "specialties": [],
       "structure": [],
       "type": "Artist",

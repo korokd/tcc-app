@@ -68,7 +68,7 @@ export default {
   methods: {
     send() {
       let payload = {
-        email: this.email,
+        email: this.email.toLowerCase().trim(),
         password: this.password
       };
 
