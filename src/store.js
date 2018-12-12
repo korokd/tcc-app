@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import createPersistedState from "vuex-persistedstate";
 
 import { createUser, updateUser, getUsers } from "@/service";
 
@@ -12,8 +13,12 @@ const INITIAL_STATE = {
 
 export default new Vuex.Store({
   state: { ...INITIAL_STATE },
+  plugins: [createPersistedState()],
   mutations: {
     logUserIn(state, payload) {
+      payload.skills = payload.skills.sort((v1, v2) =>
+        v1.name > v2.name ? 1 : v2.name > v1.name ? -1 : 0
+      );
       state.isUserLoggedIn = true;
       state.user = payload;
       // console.log(state);
@@ -23,6 +28,9 @@ export default new Vuex.Store({
       state.user = INITIAL_STATE.user;
     },
     updateUser(state, payload) {
+      payload.skills = payload.skills.sort((v1, v2) =>
+        v1.name > v2.name ? 1 : v2.name > v1.name ? -1 : 0
+      );
       state.user = payload;
       location.reload();
     }

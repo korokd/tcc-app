@@ -48,8 +48,32 @@
       "type": "Artist",
       "ecossystem": [],
       "password": "10141527"
+    },
+    {
+      "id": 2,
+      "email": "amadeu@producer.ch",
+      "fullName": "Amadeu Soares",
+      "skills": [
+        {
+          "name": "MPB",
+          "proficiency": 79
+        },
+        {
+          "name": "Trap",
+          "proficiency": 82
+        }
+      ],
+      "structure": [],
+      "type": "Recorder",
+      "ecossystem": [],
+      "password": "10141527"
     }
   ],
   "uploads": [],
-  "connections": []
+  "connections": [
+    {
+      "user1": 1,
+      "user2": 2
+    }
+  ]
 }

@@ -11,13 +11,13 @@
     </v-toolbar>
 
     <v-bottom-nav app :value="true" color="white" class="bottom-nav" v-if="isUserLoggedIn">
-      <v-btn color="secondary" flat value="home" to="/">
+      <v-btn color="secondary" flat value="home" to="/home">
         <span>Feed</span>
         <v-icon>home</v-icon>
       </v-btn>
       <v-btn color="secondary" flat value="search" to="/search">
-        <span>Busca</span>
-        <v-icon>search</v-icon>
+        <span>Conexões</span>
+        <v-icon>group</v-icon>
       </v-btn>
       <v-btn color="secondary" flat value="messages" to="/profile">
         <span>Perfil</span>

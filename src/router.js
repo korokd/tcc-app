@@ -3,6 +3,7 @@ import Router from "vue-router";
 
 import Home from "@/views/Home";
 import Profile from "@/views/Profile";
+import Connections from "@/views/Connections";
 
 Vue.use(Router);
 
@@ -22,7 +23,9 @@ export default new Router({
     },
     {
       path: "/search",
-      name: "search"
+      name: "search",
+      // component: () => import(/* webpackChunkName: "Connections" */ Connections)
+      component: Connections
     },
     {
       path: "/profile",
