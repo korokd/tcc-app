@@ -3,7 +3,7 @@
     <v-toolbar app color="primary">
       <v-toolbar-title>
         <router-link to="/">
-          <span class="headline">ArtSe</span>
+          <img height="40" src="../assets/logo.png" alt="ArtSe">
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>

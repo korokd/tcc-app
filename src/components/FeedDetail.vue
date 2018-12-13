@@ -2,8 +2,9 @@
   <v-card class="card" flat>
     <v-card-title>
       <user-avatar :user="post.user"></user-avatar>
-      <span class="title">{{ post.title }}</span>
+      <span class="title">{{ post.user.fullName }}</span>
     </v-card-title>
+    <v-card-text class="headline text">{{ post.title }}</v-card-text>
     <v-card-text class="text">{{ post.description }}</v-card-text>
   </v-card>
 </template>

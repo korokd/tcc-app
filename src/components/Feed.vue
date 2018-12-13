@@ -2,11 +2,7 @@
   <v-container>
     <v-subheader class="headline">Feed</v-subheader>
     <v-list subheader>
-      <feed-detail
-        :post="post"
-        v-for="post in feedItems"
-        :key="`${post.title}/${post.description}`"
-      ></feed-detail>
+      <feed-detail :post="post" v-for="post in feedItems" :key="`${post.id}`"></feed-detail>
     </v-list>
     <v-btn fixed dark fab bottom right color="primary" class="action-button">
       <v-dialog v-model="dialog">
@@ -19,13 +15,13 @@
 <script>
 import FeedDetail from "@/components/FeedDetail";
 import PublishPost from "@/components/PublishPost";
-import { getPosts } from "@/service";
+import { getConnections, getPosts } from "@/service";
 
 const updatePosts = instance =>
-  getPosts().then(
-    r =>
-      (instance.feedItems = r.filter(
-        p => p.user.id === instance.$store.state.user.id
+  Promise.all([getConnections(instance.$store.state.user), getPosts()]).then(
+    ([connections, posts]) =>
+      (instance.feedItems = posts.filter(p =>
+        [instance.$store.state.user.id, ...connections].includes(p.user.id)
       ))
   );
 

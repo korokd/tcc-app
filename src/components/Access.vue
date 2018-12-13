@@ -61,7 +61,7 @@ export default {
       name: [v => !!v || `Seu nome é obrigatório(a)`],
       password: [
         v => !!v || "Senha é obrigatório",
-        v => v.length >= 6 || "Email precisa ser válido"
+        v => v.length >= 6 || "Senha precisa conter no mínimo 6 caracteres"
       ]
     }
   }),

@@ -3,19 +3,19 @@
     {
       "id": 1,
       "archives": [],
-      "description": "Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla",
-      "title": "Xesquedele",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec ante a odio mollis vehicula. Etiam molestie convallis mauris, ut imperdiet leo hendrerit non.",
+      "title": "Lorem Impsum",
       "user": 1
     },
     {
-      "title": "DesqueDolly",
-      "description": "Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla",
-      "user": 1,
+      "title": "Lorem Impsum",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec ante a odio mollis vehicula. Etiam molestie convallis mauris, ut imperdiet leo hendrerit non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi facilisis finibus elit id tincidunt. Vestibulum orci eros, tristique sed est in, viverra aliquam est. Donec euismod dapibus orci.",
+      "user": 2,
       "id": 3
     },
     {
-      "title": "DollyXesque",
-      "description": "Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla",
+      "title": "Lorem Impsum",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec ante a odio mollis vehicula. Etiam molestie convallis mauris, ut imperdiet leo hendrerit non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
       "user": 1,
       "id": 4
     }
@@ -71,6 +71,16 @@
           "proficiency": 82
         }
       ],
+      "structure": [],
+      "type": "Producer",
+      "ecossystem": [],
+      "password": "10141527"
+    },
+    {
+      "id": 3,
+      "email": "jorge@recorder.ch",
+      "fullName": "Jorge Cleiton Silva",
+      "skills": [],
       "structure": [],
       "type": "Recorder",
       "ecossystem": [],

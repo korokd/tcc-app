@@ -37,21 +37,11 @@ import { getConnections, getUsers } from "@/service";
 const updateUserList = (instance, query) => {
   Promise.all([getUsers(), getConnections(instance.$store.state.user)]).then(
     ([users, connections]) => {
-      const userIds = [
-        ...new Set(
-          connections.map(
-            c => (c.user1 === instance.$store.state.user.id ? c.user2 : c.user1)
-          )
-        )
-      ];
-
       const filter = query
         ? ({ fullName }) => fullName.toLowerCase().includes(query.toLowerCase())
-        : ({ id }) => userIds.includes(id);
+        : ({ id }) => connections.includes(id);
 
-      const filteredUsers = users.filter(filter);
-
-      instance.users = filteredUsers;
+      instance.users = users.filter(filter);
     }
   );
 };

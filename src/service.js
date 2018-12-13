@@ -26,7 +26,8 @@ export const getUsers = () => fetch(USERS_URL).then(r => r.json());
 export const getConnections = ({ id }) =>
   fetch(CONNECTIONS_URL)
     .then(r => r.json())
-    .then(r => r.filter(c => c.user1 === id || c.user2 === id));
+    .then(r => r.filter(c => c.user1 === id || c.user2 === id))
+    .then(r => [...new Set(r.map(c => (c.user1 === id ? c.user2 : c.user1)))]);
 
 export const getPosts = () =>
   Promise.all([fetch(POSTS_URL).then(r => r.json()), getUsers()]).then(
